@@ -86,11 +86,15 @@ class Scanner {
             case '\t':
                 // Ignore whitespace.
                 break;
-
             case '\n':
                 line++;
                 break;
             case '"': string(); break;
+            case 'o':
+                if (match('r')) {
+                    addToken(OR);
+                }
+                break;
             default:
                 if (isDigit(c)) {
                     number();
@@ -142,6 +146,7 @@ class Scanner {
         current++;
         return true;
     }
+
     private char peek() {
         if (isAtEnd()) return '\0';
         return source.charAt(current);
