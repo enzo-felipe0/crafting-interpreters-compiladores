@@ -4,14 +4,21 @@ Este projeto é uma implementação de um interpretador para a linguagem de prog
 
 ## 🚀 Tecnologias e Dependências
 
-*   **Java**.
-*   **Maven:** Usado para gerenciamento de dependências e automação do build.
+* **Java**.
+* **Maven:** Usado para gerenciamento de dependências e automação do build.
+
+## 📋 Pré-requisitos
+
+Para compilar e executar este projeto localmente, você precisará ter instalado:
+
+* **Java JDK 17** (ou superior)
+* **Apache Maven**
 
 ## ⚙️ Como Compilar e Executar
 
 1.  **Clone o repositório:**
     ```
-    git clone https://github.com/enzo-felipe0/jlox.git
+    git clone [https://github.com/enzo-felipe0/jlox.git](https://github.com/enzo-felipe0/jlox.git)
     cd jlox
     ```
 
@@ -24,14 +31,14 @@ Este projeto é uma implementação de um interpretador para a linguagem de prog
 3.  **Execute o interpretador:**
     Você pode executar o interpretador em modo interativo (REPL) ou passando um arquivo de script como argumento.
 
-    *   **Modo Interativo (REPL):**
+    * **Modo Interativo (REPL):**
         ```
         java -jar target/jlox-1.0-SNAPSHOT-jar-with-dependencies.jar
         ```
 
-    *   **Executar um arquivo de script:**
+    * **Executar um arquivo de script:**
         ```
-        java -jar target/jlox-1.0-SNAPSHOT-jar-with-dependencies.jar /caminho/para/seu/script.lox
+        java -jar target/jloxt-1.0-SNAPSHOT-jar-with-dependencies.jar /caminho/para/seu/script.lox
         ```
 
 ## 👨‍💻 Autores
@@ -40,4 +47,3 @@ Este projeto é uma implementação de um interpretador para a linguagem de prog
 | ----------------------------------- | ------------------------------------------ |
 | Enzo Felipe Prudencio Avelino Lima  | [enzo-felipe0](https://github.com/enzo-felipe0) |
 | Francisco Elias da Silva Fernandes  | [Elias66Fernandes](https://github.com/Elias66Fernandes) |
-
