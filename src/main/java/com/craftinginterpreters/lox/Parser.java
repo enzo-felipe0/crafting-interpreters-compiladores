@@ -99,8 +99,6 @@ class Parser {
         }
 
         throw error(peek(), "Expect expression.");
-
-        return null;
     }
 
     private boolean match(TokenType... types) {
