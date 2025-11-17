@@ -29,6 +29,14 @@ class Parser {
         return expr;
     }
 
+    Expr parse() {
+        try {
+            return expression();
+        } catch (ParseError error) {
+            return null;
+        }
+    }
+
     private Expr comparison() {
         Expr expr = term();
 
@@ -89,6 +97,8 @@ class Parser {
             consume(RIGHT_PAREN, "Expect ')' after expression.");
             return new Expr.Grouping(expr);
         }
+
+        throw error(peek(), "Expect expression.");
 
         return null;
     }
