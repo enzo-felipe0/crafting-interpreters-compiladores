@@ -70,14 +70,21 @@ class Interpreter implements Expr.Visitor<Object>,
         return expr.accept(this);
     }
 
-    private void execute(Stmt stmt) {
-        stmt.accept(this);
-    }
-
     @Override
     public Void visitExpressionStmt(Stmt.Expression stmt) {
         evaluate(stmt.expression);
         return null;
+    }
+
+    @Override
+    public Void visitPrintStmt(Stmt.Print stmt) {
+        Object value = evaluate(stmt.expression);
+        System.out.println(stringify(value));
+        return null;
+    }
+
+    private void execute(Stmt stmt) {
+        stmt.accept(this);
     }
 
     @Override
