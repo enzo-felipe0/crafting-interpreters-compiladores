@@ -1,4 +1,5 @@
 package com.craftinginterpreters.lox;
+import java.util.List;
 
 class Interpreter implements Expr.Visitor<Object>,
         Stmt.Visitor<Void> {
@@ -57,6 +58,10 @@ class Interpreter implements Expr.Visitor<Object>,
 
     private Object evaluate(Expr expr) {
         return expr.accept(this);
+    }
+
+    private void execute(Stmt stmt) {
+        stmt.accept(this);
     }
 
     @Override
