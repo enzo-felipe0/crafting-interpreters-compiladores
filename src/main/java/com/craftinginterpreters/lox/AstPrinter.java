@@ -1,4 +1,4 @@
-package com.craftinginterpreters.lox;
+/*package com.craftinginterpreters.lox;
 
 class AstPrinter implements Expr.Visitor<String> {
     String print(Expr expr) {
@@ -51,4 +51,4 @@ class AstPrinter implements Expr.Visitor<String> {
 
         System.out.println(new AstPrinter().print(expression));
     }
-}
+}*/
