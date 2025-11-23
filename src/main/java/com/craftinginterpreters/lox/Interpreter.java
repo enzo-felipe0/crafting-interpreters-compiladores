@@ -60,6 +60,12 @@ class Interpreter implements Expr.Visitor<Object>,
     }
 
     @Override
+    public Void visitExpressionStmt(Stmt.Expression stmt) {
+        evaluate(stmt.expression);
+        return null;
+    }
+
+    @Override
     public Object visitBinaryExpr(Expr.Binary expr) {
         Object left = evaluate(expr.left);
         Object right = evaluate(expr.right);
@@ -116,14 +122,14 @@ class Interpreter implements Expr.Visitor<Object>,
         throw new RuntimeError(operator, "Operands must be numbers.");
     }
 
-    void interpret(Expr expression) {
+    void interpret(List<Stmt> statements) {
         try {
-            Object value = evaluate(expression);
-            System.out.println(stringify(value));
+            for (Stmt statement : statements) {
+                execute(statement);
+            }
         } catch (RuntimeError error) {
             Lox.runtimeError(error);
         }
     }
-
 
 }
