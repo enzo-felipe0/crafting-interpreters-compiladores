@@ -1,6 +1,7 @@
 package com.craftinginterpreters.lox;
 
-class Interpreter implements Expr.Visitor<Object> {
+class Interpreter implements Expr.Visitor<Object>,
+        Stmt.Visitor<Void> {
 
     @Override
     public Object visitLiteralExpr(Expr.Literal expr) {
